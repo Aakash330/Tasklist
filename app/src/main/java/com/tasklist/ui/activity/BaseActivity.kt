@@ -14,6 +14,9 @@ open class BaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
     }
 
+    /**
+     * to show the statubar dynmic color
+     */
     private  fun showStatusbarwhiteAndTime() {
         window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
         window.statusBarColor = ContextCompat.getColor(this, R.color.transeparent)
