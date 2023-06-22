@@ -24,8 +24,8 @@ interface TaskDao {
    @Query("DELETE FROM TaskTable WHERE id =:id")
    suspend fun deleteTask(id:Long)
 
-   @Query("SELECT time_in_mili FROM TaskTable WHERE time_in_mili < :currenttime ORDER BY time_in_mili ASC ")
-   suspend fun filterByAssending(time_in_mili:Long)
+  /* @Query("SELECT time_in_mili FROM TaskTable WHERE time_in_mili < :currenttime ORDER BY time_in_mili ASC ")
+   suspend fun filterByAssending (currenttime:Long):List<TaskTable>*/
 
 
 
