@@ -96,6 +96,10 @@ class MainActivity : BaseActivity(), RvListner {
             adapter.notifyDataSetChanged()
             if (taskList.size==0)
                 binding.notask.visibility=View.VISIBLE
+            else
+            {
+                binding.notask.visibility=View.INVISIBLE
+            }
         }
 
         taskViewModel.deleteObserver.observe(this) {
@@ -104,6 +108,8 @@ class MainActivity : BaseActivity(), RvListner {
             adapter.notifyDataSetChanged()
             if (taskList.size==0)
                 binding.notask.visibility=View.VISIBLE
+
+
         }
         taskViewModel.updateObserver.observe(this) {
             taskList[currentPostion].status = AppConstent.COMPLETED

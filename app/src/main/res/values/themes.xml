@@ -19,6 +19,7 @@
         <item name="shapeAppearanceOverlay">@style/Dialog.Rounded</item>
         <item name="colorSurface">@color/white</item>
     </style>
+
     <style name="Dialog.Rounded" parent="">
         <item name="cornerFamily">rounded</item>
         <item name="cornerSize">15dp</item>

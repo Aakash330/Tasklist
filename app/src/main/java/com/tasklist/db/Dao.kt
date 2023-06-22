@@ -9,31 +9,23 @@ import com.tasklist.model.TaskTable
 @Dao
 interface TaskDao {
 
-   @Insert(onConflict = OnConflictStrategy.REPLACE)
-   suspend fun addTask(taskData:TaskTable)
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun addTask(taskData: TaskTable)
 
-   @Query("SELECT * FROM TaskTable")
-   suspend fun getAllTask():List<TaskTable>
+    @Query("SELECT * FROM TaskTable")
+    suspend fun getAllTask(): List<TaskTable>
 
-   @Query("SELECT * FROM TaskTable where date = :formatDate")
-   suspend fun filterData(formatDate:String):List<TaskTable>
+    @Query("SELECT * FROM TaskTable where date = :formatDate")
+    suspend fun filterData(formatDate: String): List<TaskTable>
 
-   @Query("UPDATE TaskTable SET status = :status WHERE id = :id")
-   suspend fun updateStatus(status:String,id:Long):Int
-   
-   @Query("DELETE FROM TaskTable WHERE id =:id")
-   suspend fun deleteTask(id:Long)
+    @Query("UPDATE TaskTable SET status = :status WHERE id = :id")
+    suspend fun updateStatus(status: String, id: Long): Int
 
-  /* @Query("SELECT time_in_mili FROM TaskTable WHERE time_in_mili < :currenttime ORDER BY time_in_mili ASC ")
-   suspend fun filterByAssending (currenttime:Long):List<TaskTable>*/
+    @Query("DELETE FROM TaskTable WHERE id =:id")
+    suspend fun deleteTask(id: Long)
 
-
-
-
-
-
-
-
+    /* @Query("SELECT time_in_mili FROM TaskTable WHERE time_in_mili < :currenttime ORDER BY time_in_mili ASC ")
+     suspend fun filterByAssending (currenttime:Long):List<TaskTable>*/
 
 
 }
